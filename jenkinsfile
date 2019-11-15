@@ -25,11 +25,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-               withMaven(maven : 'apache-maven-3.3.3')
-                    {
-               bat 'mvn install'
-               }
-   }
+             
+               bat label: '', script: 'mvn install'
+               
+                }
         }
         stage('Test') {
             steps {
