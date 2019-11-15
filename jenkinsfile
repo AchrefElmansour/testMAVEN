@@ -25,14 +25,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-             
-               bat label: '', script: 'C:/maven/bin/mvnDebug install'
+               bat label: '', script: 'C:/maven/bin/mvn -version'
+               bat label: '', script: 'C:/maven/bin/mvn install'
                
                 }
         }
         stage('Test') {
             steps {
-                bat label: '', script: 'C:/maven/bin/mvnDebug test'
+                bat label: '', script: 'C:/maven/bin/mvn test'
             }
         }
         stage("Deploy") {
