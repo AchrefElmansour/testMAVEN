@@ -10,9 +10,9 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "localhost:8084"
+        NEXUS_URL = "localhost:7081"
         // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "repository_mavenjenkins"
+        NEXUS_REPOSITORY = "kalsh"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
     }
@@ -25,8 +25,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-               bat label: '', script: 'C:/maven/bin/mvn -version'
-               bat label: '', script: 'C:/maven/bin/mvn install'
+               bat label: '', script: 'mvn -version'
+               bat label: '', script: 'mvn install'
                
                 }
         }
