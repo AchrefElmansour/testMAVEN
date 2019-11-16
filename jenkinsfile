@@ -77,4 +77,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            emailext body: 'Ceci est un mail de Jenkins',to: "walid.touil@esprit.tn", recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Jenkins Kamel '
+        }
+    }
 }
